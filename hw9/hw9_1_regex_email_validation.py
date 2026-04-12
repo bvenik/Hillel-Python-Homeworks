@@ -11,15 +11,16 @@ def validate_email(input_email: str) -> bool:
     return bool(re.fullmatch(pattern, input_email))
 
 
-test_cases = [
-    "example@domain.com",
-    "a.b.c@mail.net",
-    "abbbs@@mail.net",
-    "user123@sub.google",
-    ".abc@domain.com",
-    "abc.@domain.com",
-    "abc@dom_ain.com",
-    "abc@domain.c"]
+if __name__ == '__main__':
+    test_cases = [
+        "example@domain.com",
+        "a.b.c@mail.net",
+        "abbbs@@mail.net",
+        "user123@sub.google",
+        ".abc@domain.com",
+        "abc.@domain.com",
+        "abc@dom_ain.com",
+        "abc@domain.c"]
 
-for email in test_cases:
-    print(f"{email}: {validate_email(email)}")
+    for email in test_cases:
+        print(f"{email}: {validate_email(email)}")

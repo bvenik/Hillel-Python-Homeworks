@@ -11,5 +11,6 @@ def find_phone_numbers(input_text: str) -> list:
     return re.findall(pattern, input_text)
 
 
-numbers = "(123456*7890, (123) 456-7890, 123)456-7890 , 123456s7890, 123-456-7890, 123.456.7890, 1234567890, 1234 56 1234"
-print(find_phone_numbers(numbers))
+if __name__ == '__main__':
+    numbers = "(123456*7890, (123) 456-7890, 123)456-7890 , 123456s7890, 123-456-7890, 123.456.7890, 1234567890, 1234 56 1234"
+    print(find_phone_numbers(numbers))

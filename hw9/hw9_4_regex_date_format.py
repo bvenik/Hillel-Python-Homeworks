@@ -12,4 +12,5 @@ def formate_date(input_text: str) -> str:
     return re.sub(pattern_input, pattern_output, input_text)
 
 
-print(formate_date("12/04/2026"))
+if __name__ == '__main__':
+    print(formate_date("12/04/2026"))
