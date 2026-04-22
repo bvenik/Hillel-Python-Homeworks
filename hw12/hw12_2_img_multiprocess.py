@@ -18,7 +18,7 @@ def image_processing(filepath: str) -> None:
     except Exception as e:
         print(f"{e}")
 
-
+#easiest way to get these files, run hw12_1_web_get.py
 files_to_mirror = ["file1.png", "file2.png", "file3.png"]
 
 if __name__ == '__main__':
