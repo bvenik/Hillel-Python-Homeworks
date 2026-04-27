@@ -57,5 +57,6 @@ async def fetch_all(urls: list) -> None:
                 print(result)
 
 
-urls_to_operate = ["google.com", "youtube.com", "github.com", "google_com", "youtube"]
-asyncio.run(fetch_all(urls_to_operate))
+if __name__ == '__main__':
+    urls_to_operate = ["google.com", "youtube.com", "github.com", "google_com", "youtube"]
+    asyncio.run(fetch_all(urls_to_operate))
