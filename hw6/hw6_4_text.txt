@@ -1,0 +1,13 @@
+debug log
+error at 30 line
+true not equals 2
+why error
+
+error
+here it is
+
+there are errors
+
+only one error here
+
+error

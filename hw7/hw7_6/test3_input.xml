@@ -1,0 +1,12 @@
+<products>
+    <product>
+        <name>Молоко</name>
+        <price>25</price>
+        <quantity>50</quantity>
+    </product>
+    <product>
+        <name>Хліб</name>
+        <price>10</price>
+        <quantity>100</quantity>
+    </product>
+</products>
