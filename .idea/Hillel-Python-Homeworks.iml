@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="PYTHON_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/.idea/dataSources" />
+      <excludeFolder url="file://$MODULE_DIR$/hw15/my_site/.venv" />
+      <excludeFolder url="file://$MODULE_DIR$/hw15/my_site/.venv/Include" />
+      <excludeFolder url="file://$MODULE_DIR$/hw15/my_site/.venv/Lib" />
+      <excludeFolder url="file://$MODULE_DIR$/hw15/my_site/.venv/Scripts" />
+    </content>
+    <orderEntry type="jdk" jdkName="Python 3.14" jdkType="Python SDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="Hillel-Python-Lessons" />
+  </component>
+</module>

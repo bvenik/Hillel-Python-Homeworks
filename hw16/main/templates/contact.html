@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Контакти</h1>
+
+<p>Адреса: м. Одеса, вул. Центральна, 1</p>
+
+<p>Телефон: {{ phone|default:"Номер не вказано" }}</p>
+
+<p>Чи працюємо ми сьогодні? {{ is_open|yesno:"Так,Ні" }}</p>
+
+<p>Email: info@example.com</p>
+{% endblock %}

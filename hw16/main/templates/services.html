@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Наші послуги</h1>
+
+<p>Загальна кількість послуг: {{ services|length }}</p>
+
+<ul>
+    {% for item in services|slice:":3" %}
+    <li>{{ item }}</li>
+    {% endfor %}
+</ul>
+
+<p>Доступно {{ services|length }} service{{ services|length|pluralize }}</p>
+
+{% endblock %}
