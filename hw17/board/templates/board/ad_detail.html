@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ ad.title }}</title>
+</head>
+<body>
+    <h1>{{ ad.title }}</h1>
+    <p>Category: {{ ad.category.name }}</p>
+    <p>Price: {{ ad.price }} USD</p>
+    <p>Description: {{ ad.description }}</p>
+    <p>Posted by: {{ ad.user.username }} on {{ ad.created_at|date:"Y-m-d" }}</p>
+    <hr>
+    <a href="{% url 'ad_list' %}">Back to list</a>
+</body>
+</html>

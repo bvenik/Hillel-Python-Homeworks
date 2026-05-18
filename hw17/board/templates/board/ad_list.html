@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bulletin Board</title>
+</head>
+<body>
+    <h1>Active Advertisements</h1>
+    <ul>
+        {% for ad in ads %}
+            <li>
+                <a href="{% url 'ad_detail' ad.pk %}">{{ ad.title }}</a> - {{ ad.price }} USD
+                <p>{{ ad.short_description }}</p>
+            </li>
+        {% empty %}
+            <li>No active ads available.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
