@@ -1,0 +1,6 @@
+<h2>Protected page</h2>
+<p>Greetings, {{ request.user.username }}! You have successfully registered.</p>
+<form action="{% url 'logout' %}" method="post">
+    {% csrf_token %}
+    <button type="submit">Logout</button>
+</form>

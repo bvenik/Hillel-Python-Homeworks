@@ -1,0 +1,11 @@
+<h2>XSS demo</h2>
+<form method="get">
+    <input type="text" name="search" placeholder="Enter something...">
+    <button type="submit">Search</button>
+</form>
+
+<h3>Safe output (Django defaults):</h3>
+<p>{{ user_input }}</p>
+
+<h3>Insecure output (Not protected):</h3>
+<p>{{ user_input|safe }}</p>
