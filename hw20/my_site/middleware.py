@@ -5,30 +5,17 @@ logger = logging.getLogger('django.security')
 
 
 class SecurityLoggingMiddleware:
-
     def __init__(self, get_response):
         self.get_response = get_response
 
     def __call__(self, request):
         protected_paths = ['/home/', '/admin/']
 
-        if any(request.path.startswith(path) for path in protected_paths):
-            user_id = request.session.get('user_id')
-            username = request.session.get('username', 'Anonymous')
-            ip_address = request.META.get('REMOTE_ADDR', 'Unknown IP')
-
-            if not user_id:
-                logger.warning(
-                    f"Unauthorized! Path: {request.path} | IP: {ip_address}"
-                )
-            else:
-
-                logger.info(
-                    f"User {username} (ID: {user_id}) visited {request.path} | IP: {ip_address}"
-                )
-
-        response = self.get_response(request)
-        return response
+        if request.path in protected_paths:
+            user = request.session.get('user_id', 'Anonymous')
+            ip = request.META.get('REMOTE_ADDR')
+            logger.warning(f"User {user} accessed protected path {request.path} from IP {ip}")
+        return self.get_response(request)
 
 
 class ErrorHandlingMiddleware:
