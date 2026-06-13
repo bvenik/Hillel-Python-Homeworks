@@ -1,0 +1,97 @@
+2026-06-13 15:44:31,501 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/getUpdates "HTTP/1.1 200 OK"
+2026-06-13 15:44:32,189 - __main__ - INFO - Success cat request. Latency: 0.685
+2026-06-13 15:44:32,283 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/sendPhoto "HTTP/1.1 200 OK"
+2026-06-13 15:44:34,061 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/getUpdates "HTTP/1.1 200 OK"
+2026-06-13 15:44:34,143 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/sendMessage "HTTP/1.1 200 OK"
+2026-06-13 15:44:36,830 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/getUpdates "HTTP/1.1 200 OK"
+2026-06-13 15:44:37,445 - __main__ - INFO - Success cat request. Latency: 0.611
+2026-06-13 15:44:37,547 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/sendPhoto "HTTP/1.1 200 OK"
+2026-06-13 15:44:39,084 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/getUpdates "HTTP/1.1 200 OK"
+2026-06-13 15:44:39,739 - __main__ - INFO - Success cat request. Latency: 0.651
+2026-06-13 15:44:39,826 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/sendPhoto "HTTP/1.1 200 OK"
+2026-06-13 15:44:40,832 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/getUpdates "HTTP/1.1 200 OK"
+2026-06-13 15:44:41,442 - __main__ - INFO - Success cat request. Latency: 0.608
+2026-06-13 15:44:41,669 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/sendPhoto "HTTP/1.1 200 OK"
+2026-06-13 15:44:45,312 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/getUpdates "HTTP/1.1 200 OK"
+2026-06-13 15:44:45,904 - __main__ - INFO - Success cat request. Latency: 0.588
+2026-06-13 15:44:45,996 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/sendPhoto "HTTP/1.1 200 OK"
+2026-06-13 15:44:51,509 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/getUpdates "HTTP/1.1 200 OK"
+2026-06-13 15:44:59,060 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/getUpdates "HTTP/1.1 200 OK"
+2026-06-13 15:44:59,676 - __main__ - INFO - Success cat request. Latency: 0.612
+2026-06-13 15:44:59,754 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/getUpdates "HTTP/1.1 200 OK"
+2026-06-13 15:44:59,870 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/getUpdates "HTTP/1.1 200 OK"
+2026-06-13 15:44:59,883 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/sendPhoto "HTTP/1.1 200 OK"
+2026-06-13 15:45:00,409 - __main__ - INFO - Success cat request. Latency: 0.521
+2026-06-13 15:45:00,411 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/getUpdates "HTTP/1.1 200 OK"
+2026-06-13 15:45:00,468 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/getUpdates "HTTP/1.1 200 OK"
+2026-06-13 15:45:00,543 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/sendPhoto "HTTP/1.1 200 OK"
+2026-06-13 15:45:06,556 - __main__ - INFO - Success cat request. Latency: 6.008
+2026-06-13 15:45:06,563 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/getUpdates "HTTP/1.1 200 OK"
+2026-06-13 15:45:06,633 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/getUpdates "HTTP/1.1 200 OK"
+2026-06-13 15:45:06,772 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/sendPhoto "HTTP/1.1 200 OK"
+2026-06-13 15:45:07,483 - __main__ - INFO - Success cat request. Latency: 0.705
+2026-06-13 15:45:07,590 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/sendPhoto "HTTP/1.1 200 OK"
+2026-06-13 15:45:08,239 - __main__ - INFO - Success cat request. Latency: 0.644
+2026-06-13 15:45:08,602 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/sendPhoto "HTTP/1.1 200 OK"
+2026-06-13 15:45:09,382 - __main__ - INFO - Success cat request. Latency: 0.775
+2026-06-13 15:45:09,490 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/sendPhoto "HTTP/1.1 200 OK"
+2026-06-13 15:45:10,252 - __main__ - INFO - Success cat request. Latency: 0.751
+2026-06-13 15:45:10,343 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/sendPhoto "HTTP/1.1 200 OK"
+2026-06-13 15:45:11,210 - __main__ - INFO - Success cat request. Latency: 0.856
+2026-06-13 15:45:11,310 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/sendPhoto "HTTP/1.1 200 OK"
+2026-06-13 15:45:12,133 - __main__ - INFO - Success cat request. Latency: 0.814
+2026-06-13 15:45:12,232 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/sendPhoto "HTTP/1.1 200 OK"
+2026-06-13 15:45:12,931 - __main__ - INFO - Success cat request. Latency: 0.693
+2026-06-13 15:45:13,039 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/sendPhoto "HTTP/1.1 200 OK"
+2026-06-13 15:45:13,698 - __main__ - INFO - Success cat request. Latency: 0.654
+2026-06-13 15:45:13,833 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/sendPhoto "HTTP/1.1 200 OK"
+2026-06-13 15:45:14,532 - __main__ - INFO - Success cat request. Latency: 0.693
+2026-06-13 15:45:14,621 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/sendPhoto "HTTP/1.1 200 OK"
+2026-06-13 15:45:15,294 - __main__ - INFO - Success cat request. Latency: 0.666
+2026-06-13 15:45:15,395 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/sendPhoto "HTTP/1.1 200 OK"
+2026-06-13 15:45:15,938 - __main__ - INFO - Success cat request. Latency: 0.536
+2026-06-13 15:45:16,029 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/sendPhoto "HTTP/1.1 200 OK"
+2026-06-13 15:45:16,686 - __main__ - INFO - Success cat request. Latency: 0.651
+2026-06-13 15:45:16,708 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/getUpdates "HTTP/1.1 200 OK"
+2026-06-13 15:45:16,778 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/sendPhoto "HTTP/1.1 200 OK"
+2026-06-13 15:45:17,390 - __main__ - INFO - Success cat request. Latency: 0.606
+2026-06-13 15:45:17,476 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/sendPhoto "HTTP/1.1 200 OK"
+2026-06-13 15:45:17,991 - __main__ - INFO - Success cat request. Latency: 0.507
+2026-06-13 15:45:18,076 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/sendPhoto "HTTP/1.1 200 OK"
+2026-06-13 15:45:26,789 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/getUpdates "HTTP/1.1 200 OK"
+2026-06-13 15:45:31,813 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/getUpdates "HTTP/1.1 200 OK"
+2026-06-13 15:45:31,816 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2026-06-13 15:45:31,816 - telegram.ext.Application - INFO - Application.stop() complete
+2026-06-13 15:45:31,819 - __main__ - INFO - Bot stopped
+2026-06-13 15:54:18,858 - __main__ - INFO - Bot started
+2026-06-13 15:54:19,277 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/getMe "HTTP/1.1 200 OK"
+2026-06-13 15:54:19,365 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/deleteWebhook "HTTP/1.1 200 OK"
+2026-06-13 15:54:19,368 - telegram.ext.Application - INFO - Application started
+2026-06-13 15:54:20,797 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/getUpdates "HTTP/1.1 200 OK"
+2026-06-13 15:54:20,876 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/sendMessage "HTTP/1.1 200 OK"
+2026-06-13 15:54:24,538 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/getUpdates "HTTP/1.1 200 OK"
+2026-06-13 15:54:25,178 - __main__ - INFO - Successful currency request. Latency: 0.635
+2026-06-13 15:54:25,259 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/sendMessage "HTTP/1.1 200 OK"
+2026-06-13 15:54:35,736 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/getUpdates "HTTP/1.1 200 OK"
+2026-06-13 15:54:45,882 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/getUpdates "HTTP/1.1 200 OK"
+2026-06-13 15:54:55,939 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/getUpdates "HTTP/1.1 200 OK"
+2026-06-13 15:55:01,347 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/getUpdates "HTTP/1.1 200 OK"
+2026-06-13 15:55:01,348 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2026-06-13 15:55:01,348 - telegram.ext.Application - INFO - Application.stop() complete
+2026-06-13 15:55:01,350 - __main__ - INFO - Bot stopped
+2026-06-13 15:56:14,764 - __main__ - INFO - Bot started
+2026-06-13 15:56:15,021 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/getMe "HTTP/1.1 200 OK"
+2026-06-13 15:56:15,076 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/deleteWebhook "HTTP/1.1 200 OK"
+2026-06-13 15:56:15,079 - telegram.ext.Application - INFO - Application started
+2026-06-13 15:56:18,010 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/getUpdates "HTTP/1.1 200 OK"
+2026-06-13 15:56:18,466 - __main__ - INFO - Successful currency request. Latency: 0.454
+2026-06-13 15:56:18,547 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/sendMessage "HTTP/1.1 200 OK"
+2026-06-13 15:56:21,930 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/getUpdates "HTTP/1.1 200 OK"
+2026-06-13 15:56:22,014 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/sendMessage "HTTP/1.1 200 OK"
+2026-06-13 15:56:24,344 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/getUpdates "HTTP/1.1 200 OK"
+2026-06-13 15:56:24,538 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/sendMessage "HTTP/1.1 200 OK"
+2026-06-13 15:56:24,543 - __main__ - INFO - Successful request for 'Kyiv'. Latency: 0.108
+2026-06-13 15:56:34,190 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8982254874:AAGw2ygJ-v0iqZgVNSaIkRkGdEQeE-JEIwM/getUpdates "HTTP/1.1 200 OK"
+2026-06-13 15:56:34,192 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2026-06-13 15:56:34,192 - telegram.ext.Application - INFO - Application.stop() complete
+2026-06-13 15:56:34,194 - __main__ - INFO - Bot stopped
