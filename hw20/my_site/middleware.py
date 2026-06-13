@@ -12,9 +12,10 @@ class SecurityLoggingMiddleware:
         protected_paths = ['/home/', '/admin/']
 
         if request.path in protected_paths:
-            user = request.session.get('user_id', 'Anonymous')
-            ip = request.META.get('REMOTE_ADDR')
-            logger.warning(f"User {user} accessed protected path {request.path} from IP {ip}")
+            if not request.session.get('user_id'):
+                ip = request.META.get('REMOTE_ADDR')
+                logger.warning(f"Unauthorized access attempt to {request.path} from IP {ip}")
+
         return self.get_response(request)
 
 

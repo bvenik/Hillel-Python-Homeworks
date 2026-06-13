@@ -7,9 +7,7 @@ def register_view(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
-            user = form.save(commit=False)
-            user.set_password(form.cleaned_data['password'])
-            user.save()
+            form.save()
             return redirect('login')
     else:
         form = RegistrationForm()
@@ -23,10 +21,9 @@ def login_view(request):
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
             try:
-                user = User.objects.get(username=username)
-                if check_password(password, user.password):
+                user = User.objects.filter(username=username).first()
+                if user and check_password(password,user.password):
                     request.session['user_id'] = user.id
-                    request.session['username'] = user.username
                     return redirect('home')
                 else:
                     error_message = "Incorrect username or password."
