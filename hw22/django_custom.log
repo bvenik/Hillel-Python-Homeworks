@@ -20,3 +20,6 @@ INFO 2026-06-22 19:44:38,965 middleware МЕТРИКА: Запит №4 наді
 INFO 2026-06-22 19:44:48,326 middleware МЕТРИКА: Запит №5 надіслано на URL: /task/new/
 INFO 2026-06-22 19:44:48,346 middleware МЕТРИКА: Запит №6 надіслано на URL: /
 INFO 2026-06-22 19:47:21,316 middleware МЕТРИКА: Запит №7 надіслано на URL: /favicon.ico
+INFO 2026-06-24 14:23:06,128 middleware МЕТРИКА: Запит №1 надіслано на URL: /api/tasks/
+INFO 2026-06-24 14:23:06,559 middleware МЕТРИКА: Запит №2 надіслано на URL: /favicon.ico
+INFO 2026-06-24 14:23:23,846 middleware МЕТРИКА: Запит №3 надіслано на URL: /api/tasks/

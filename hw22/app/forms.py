@@ -43,17 +43,24 @@ class ProjectTaskForm(forms.ModelForm):
 
 
 class CustomUserCreationForm(forms.ModelForm):
-    password = forms.CharField(widget=forms.PasswordInput, label="Пароль")
+    password = forms.CharField(widget=forms.PasswordInput, label="Password")
+    password2 = forms.CharField(widget=forms.PasswordInput, label="Confirm password")
 
     class Meta:
         model = CustomUser
-        fields = ['username', 'email', 'phone_number', 'password']
+        fields = ['username', 'email', 'phone_number', 'password', 'password2']
 
     def clean_phone_number(self):
         phone = self.cleaned_data.get('phone_number')
-        if phone and not phone.startswith('+380'):
-            raise ValidationError("Номер телефону повинен обов'язково починатися з українського коду +380.")
+        if phone and not re.match(r'^\+380\d{9}$', phone):
+            raise ValidationError("Incorrect format! Correct format: +380XXXXXXXXX")
         return phone
+
+    def clean(self):
+        cleaned_data = super().clean()
+        if cleaned_data.get('password') != cleaned_data.get('password2'):
+            raise ValidationError("Passwords do not match.")
+        return cleaned_data
 
     def save(self, commit=True):
         user = super().save(commit=False)

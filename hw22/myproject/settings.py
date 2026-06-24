@@ -16,6 +16,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -96,7 +97,7 @@ LOGGING = {
         'file_handler': {
             'level': 'INFO',
             'class': 'logging.FileHandler',
-            'filename': 'django_custom.log',
+            'filename': BASE_DIR / 'django_custom.log',
             'formatter': 'verbose',
             'encoding': 'utf-8',
         },

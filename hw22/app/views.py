@@ -1,8 +1,10 @@
 from django.views.generic import ListView, CreateView
 from django.urls import reverse_lazy
 from django.contrib.auth import login
-from .models import ProjectTask
 from .forms import ProjectTaskForm, CustomUserCreationForm
+from rest_framework import generics, permissions
+from .serializers import ProjectTaskSerializer
+from .models import ProjectTask
 
 
 class TaskListView(ListView):
@@ -44,3 +46,29 @@ class UserRegisterView(CreateView):
         response = super().form_valid(form)
         login(self.request, self.object)
         return response
+
+
+class IsOwnerOrAdmin(permissions.BasePermission):
+    def has_object_permission(self, request, view, obj):
+        return obj.user == request.user or request.user.is_staff
+
+
+class ProjectTaskAPIView(generics.ListCreateAPIView):
+    serializer_class = ProjectTaskSerializer
+    permission_classes = [permissions.IsAuthenticated, IsOwnerOrAdmin]
+
+    def get_queryset(self):
+        user = self.request.user
+        queryset = ProjectTask.objects.all()
+
+        if not user.is_staff:
+            queryset = queryset.filter(user=user)
+
+        status_param = self.request.query_params.get('status')
+        if status_param:
+            queryset = queryset.filter(status_code=status_param.upper())
+
+        return queryset
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
