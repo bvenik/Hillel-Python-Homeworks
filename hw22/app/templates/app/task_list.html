@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load customtags %}
+<html>
+<head>
+    <title>Завдання</title>
+</head>
+<body>
+<h1>{{ PLATFORM_NAME }}</h1>
+<p>Версія: {{ PROJECT_VERSION }}</p>
+
+<p>Server time: {% current_time_formatted "%H:%M:%S" %}</p>
+
+<p>Task total: {{ stats.total_tasks }}</p>
+
+<a href="{% url 'task_create' %}">[ + Add task ]</a>
+
+<h3>Tasks list:</h3>
+{% for task in tasks %}
+<p>
+    <strong>{{ task.title }}</strong> —
+    Status: {{ task.status_code|add_alert_icon }}
+
+    {% if task.tag_color %}
+    | Колір: <b>{{ task.tag_color }}</b>
+    {% endif %}
+</p>
+<p>{{ task.description }}</p>
+<hr>
+{% endfor %}
+
+<p><a href="{% url 'register' %}">New user registration</a></p>
+</body>
+</html>
