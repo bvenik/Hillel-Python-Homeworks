@@ -13,7 +13,7 @@ load_dotenv()
 
 BOT_TOKEN: Final[str] = os.getenv("BOT_TOKEN", "")
 MODEL_NAME: Final[str] = os.getenv("OLLAMA_MODEL", "llama3")
-MAX_DIALOGUE_MESSAGES: Final[int] = 6
+MAX_DIALOGUE_MESSAGES: Final[int] = 6 #You can adjust that to make context memory of AI bigger or smaller, but it rewards you with high CPU usage
 MAX_TELEGRAM_MESSAGE_LENGTH: Final[int] = 4096
 
 SYSTEM_PROMPT: Final[str] = """
