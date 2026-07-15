@@ -24,7 +24,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
-    'bveniksite1.pythonanywhere.com',
+    'bvenik2.pythonanywhere.com',
 ]
 
 INSTALLED_APPS = [
