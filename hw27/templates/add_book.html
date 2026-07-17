@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма книги</title>
+</head>
+<body>
+    <h1>Форма книги</h1>
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.title.label }}<br>
+            {{ form.title() }}
+            {% for error in form.title.errors %}
+                <br><span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.author.label }}<br>
+            {{ form.author() }}
+            {% for error in form.author.errors %}
+                <br><span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.year.label }}<br>
+            {{ form.year() }}
+            {% for error in form.year.errors %}
+                <br><span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.genre.label }}<br>
+            {{ form.genre() }}
+            {% for error in form.genre.errors %}
+                <br><span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.submit() }}
+        </p>
+    </form>
+    <a href="{{ url_for('list_books') }}">Назад до списку</a>
+</body>
+</html>

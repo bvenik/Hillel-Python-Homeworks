@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Book Haven{% endblock %}</title>
+    <!-- Favicon / Tab Icon -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="{{ url_for('list_books') }}" class="logo">
+                <i class="fa-solid fa-book-bookmark"></i> Book Haven
+            </a>
+            <nav class="nav-links">
+                <a href="{{ url_for('list_books') }}" class="btn btn-secondary">
+                    <i class="fa-solid fa-list"></i> Books List
+                </a>
+                <a href="{{ url_for('add_book') }}" class="btn btn-primary">
+                    <i class="fa-solid fa-plus"></i> Add Book
+                </a>
+            </nav>
+        </header>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flashes">
+                    {% for category, message in messages %}
+                        <li class="flash-item flash-{{ category if category != 'error' else 'danger' }}">
+                            <i class="fa-solid {% if category == 'success' %}fa-circle-check{% else %}fa-triangle-exclamation{% endif %}"></i>
+                            {{ message }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2026 Book Haven App. All rights reserved.</p>
+    </footer>
+</body>
+</html>
