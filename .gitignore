@@ -1,5 +1,9 @@
 .idea/
 **/.idea/
+instance/
+**/instance/
+*.sqlite
+*.sqlite3
 db.sqlite3
 __pycache__/
 **/__pycache__/
