@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebSocket Chat</title>
+</head>
+<body>
+    <h1>WebSocket Chat</h1>
+
+    <div>
+        <strong>WebSocket Status:</strong> <span id="ws-status">Disconnected</span> |
+        <strong>User:</strong>
+        {% if user.is_authenticated %}
+            <span>{{ user.username }}</span>
+            [<a href="{% url 'logout' %}">Logout</a>]
+        {% else %}
+            <span>Guest (read-only)</span>
+        {% endif %}
+    </div>
+
+    <hr>
+
+    <div>
+        <h3>Online users: <span id="online-counter">0</span></h3>
+    </div>
+
+    <hr>
+
+    {% if not user.is_authenticated %}
+        <div>
+            <h3>Login</h3>
+            <form action="{% url 'login' %}" method="post">
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+
+            <h3>Register</h3>
+            <form action="{% url 'register' %}" method="post">
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+        <hr>
+    {% endif %}
+
+    {% if messages %}
+        <div>
+            <strong>System messages:</strong>
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <hr>
+    {% endif %}
+
+    <div>
+        <h3>Push Notifications</h3>
+        <button id="push-btn">Send Push to All</button>
+        <div id="push-container"></div>
+    </div>
+
+    <hr>
+
+    <div>
+        <h3>Global Chat</h3>
+        <div id="chat-messages" style="height: 200px; overflow-y: scroll; border: 1px solid black; padding: 5px;"></div>
+        <br>
+        <form id="chat-form">
+            <input type="text" id="chat-input" placeholder="{% if user.is_authenticated %}Type a message...{% else %}Login to type...{% endif %}" {% if not user.is_authenticated %}disabled{% endif %} required autocomplete="off">
+            <button type="submit" {% if not user.is_authenticated %}disabled{% endif %}>Send</button>
+        </form>
+    </div>
+
+    <script>
+        const statusSpan = document.getElementById('ws-status');
+        const counterSpan = document.getElementById('online-counter');
+        const chatMessages = document.getElementById('chat-messages');
+        const chatForm = document.getElementById('chat-form');
+        const chatInput = document.getElementById('chat-input');
+        const pushBtn = document.getElementById('push-btn');
+        const pushContainer = document.getElementById('push-container');
+
+        const wsScheme = window.location.protocol === 'https:' ? 'wss' : 'ws';
+        const socketUrl = wsScheme + '://' + window.location.host + '/ws/global/';
+        const socket = new WebSocket(socketUrl);
+
+        socket.onopen = function() {
+            statusSpan.innerText = 'Connected';
+            statusSpan.style.color = 'green';
+        };
+
+        socket.onclose = function() {
+            statusSpan.innerText = 'Disconnected';
+            statusSpan.style.color = 'red';
+        };
+
+        socket.onerror = function(err) {
+            console.error('WebSocket Error:', err);
+        };
+
+        socket.onmessage = function(e) {
+            const data = JSON.parse(e.data);
+
+            if (data.type === 'online_count') {
+                counterSpan.innerText = data.count;
+            } else if (data.type === 'chat_message') {
+                const messageElement = document.createElement('div');
+                messageElement.innerHTML = '<strong>' + escapeHtml(data.username) + ':</strong> ' + escapeHtml(data.message);
+                chatMessages.appendChild(messageElement);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            } else if (data.type === 'push_notification') {
+                const pushElement = document.createElement('div');
+                pushElement.style.border = '1px dashed red';
+                pushElement.style.padding = '5px';
+                pushElement.style.margin = '5px 0';
+                pushElement.innerHTML = '<strong>Push Notification from ' + escapeHtml(data.sender) + ':</strong> ' + escapeHtml(data.message);
+                pushContainer.appendChild(pushElement);
+                setTimeout(() => {
+                    pushElement.remove();
+                }, 5000);
+            } else if (data.type === 'error') {
+                alert('Error: ' + data.message);
+            }
+        };
+
+        if (chatForm) {
+            chatForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const message = chatInput.value.trim();
+                if (message) {
+                    socket.send(JSON.stringify({
+                        'type': 'chat_message',
+                        'message': message
+                    }));
+                    chatInput.value = '';
+                }
+            });
+        }
+
+        if (pushBtn) {
+            pushBtn.addEventListener('click', function() {
+                const pushMsg = 'Hello everyone! This is an instant Push notification from an active session!';
+                socket.send(JSON.stringify({
+                    'type': 'push_notification',
+                    'message': pushMsg
+                }));
+            });
+        }
+
+        function escapeHtml(text) {
+            return text
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+    </script>
+</body>
+</html>
