@@ -1,0 +1,54 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}Books List{% endblock %}
+
+{% block content %}
+<h1>Books List (Caching & Indexing)</h1>
+<p>This page uses Django cache to store and display books. It also benchmarks searching on indexed vs non-indexed fields.</p>
+
+<h3>Cache Metadata</h3>
+<ul>
+    <li><strong>Cache Status:</strong> {% if cache_hit %}CACHE HIT (Read from cache){% else %}CACHE MISS (Queried from DB){% endif %}</li>
+    <li><strong>Response Time:</strong> {{ elapsed_time }} seconds</li>
+</ul>
+
+<h3>Database Index Benchmarks</h3>
+<ul>
+    <li><strong>Indexed Field Lookup Time (rating):</strong> {{ rating_query_time }} seconds</li>
+    <li><strong>Non-Indexed Field Lookup Time (published_date):</strong> {{ date_query_time }} seconds</li>
+</ul>
+
+<hr>
+
+<h3>Books Catalog</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Book Title</th>
+            <th>Author</th>
+            <th>Rating</th>
+            <th>Reviews</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for book in books %}
+        <tr>
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.rating }} / 5.0</td>
+            <td>
+                {% for review in book.reviews %}
+                [{{ review.reviewer }}: {{ review.rating }} ★] 
+                {% empty %}
+                No reviews yet
+                {% endfor %}
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4">No books found in the catalog.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

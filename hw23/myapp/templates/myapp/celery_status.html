@@ -1,0 +1,27 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}Task Status{% endblock %}
+
+{% block content %}
+<h1>Background Task Status</h1>
+<p>Checking background worker execution state. Refresh the page to update.</p>
+
+<ul>
+    <li><strong>Task ID:</strong> {{ task_id }}</li>
+    <li><strong>Current Status:</strong> <strong>{{ status }}</strong></li>
+</ul>
+
+{% if result %}
+<div>
+    <h3>Execution Result:</h3>
+    <p>{{ result }}</p>
+</div>
+{% endif %}
+
+<p>
+    <a href="{% url 'celery_task' %}"><button type="button">Back to Import</button></a>
+    {% if status == 'SUCCESS' %}
+    <a href="{% url 'books_list' %}"><button type="button">View Books Catalog</button></a>
+    {% endif %}
+</p>
+{% endblock %}

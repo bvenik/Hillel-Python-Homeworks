@@ -1,0 +1,25 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h1>Hello, {{ username }}!</h1>
+<p>You are {{ age }} years old (session data).</p>
+
+<p>
+    <a href="{% url 'logout' %}"><button type="button">Log Out</button></a>
+</p>
+
+<hr>
+
+<h2>Feature Overview</h2>
+<p>Select any section in the navigation menu above to access features:</p>
+<ul>
+    <li><strong>Books List (Cache)</strong>: Lists books using Django cache. Compares search times on indexed (rating) vs unindexed (published_date) fields.</li>
+    <li><strong>ORM Performance</strong>: Compares N+1 queries with eager loading optimizations (select_related and prefetch_related).</li>
+    <li><strong>ORM Aggregations</strong>: Evaluates average book ratings and review counts per book.</li>
+    <li><strong>Raw SQL</strong>: Executes direct, secure SQL queries with parameterization.</li>
+    <li><strong>Celery Import</strong>: Triggers asynchronous CSV file uploads in the background using Celery/Redis.</li>
+    <li><strong>NoSQL Benchmark</strong>: Compares SQLite performance against a MongoDB NoSQL database.</li>
+</ul>
+{% endblock %}

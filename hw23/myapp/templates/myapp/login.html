@@ -1,0 +1,23 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}Log In{% endblock %}
+
+{% block content %}
+<h2>User Log In</h2>
+<p>Please enter your name and age to proceed.</p>
+
+<form method="post">
+    {% csrf_token %}
+    <div>
+        <label for="username">Name:</label>
+        <input type="text" id="username" name="username" required placeholder="Enter your name">
+    </div>
+    <br>
+    <div>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required min="1" max="120" placeholder="Enter your age">
+    </div>
+    <br>
+    <button type="submit">Log In</button>
+</form>
+{% endblock %}

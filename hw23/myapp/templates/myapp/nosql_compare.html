@@ -1,0 +1,65 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}NoSQL Benchmark{% endblock %}
+
+{% block content %}
+<h1>NoSQL Database Benchmark</h1>
+<p>Performance comparison of relational database queries (SQLite via Django ORM) and NoSQL document database (MongoDB) operations on 100 book documents.</p>
+
+{% if results.error %}
+    <div>
+        <h3>MongoDB Connection Error</h3>
+        <p>{{ results.message }}</p>
+    </div>
+{% else %}
+    <h3>MongoDB (NoSQL)</h3>
+    <ul>
+        <li>Write time for 100 documents: {{ results.nosql_write|floatformat:4 }} seconds</li>
+        <li>Read time for 100 documents: {{ results.nosql_read|floatformat:4 }} seconds</li>
+    </ul>
+
+    <h3>SQLite (Relational ORM)</h3>
+    <ul>
+        <li>Write time for 100 records: {{ results.sqlite_write|floatformat:4 }} seconds</li>
+        <li>Read time for 100 records: {{ results.sqlite_read|floatformat:4 }} seconds</li>
+    </ul>
+
+    <hr>
+
+    <h2>Visual Comparison</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Operation</th>
+                <th>Database</th>
+                <th>Execution Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2"><strong>Write (100 items)</strong></td>
+                <td>MongoDB (NoSQL)</td>
+                <td>{{ results.nosql_write|floatformat:5 }} seconds</td>
+            </tr>
+            <tr>
+                <td>SQLite (ORM)</td>
+                <td>{{ results.sqlite_write|floatformat:5 }} seconds</td>
+            </tr>
+            <tr>
+                <td rowspan="2"><strong>Read (100 items)</strong></td>
+                <td>MongoDB (NoSQL)</td>
+                <td>{{ results.nosql_read|floatformat:5 }} seconds</td>
+            </tr>
+            <tr>
+                <td>SQLite (ORM)</td>
+                <td>{{ results.sqlite_read|floatformat:5 }} seconds</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Performance Summary</h3>
+    <p>
+        NoSQL document stores generally execute writes and reads quicker than relational systems for flat dataset operations since they bypass constraint checking and transaction validation overheads.
+    </p>
+{% endif %}
+{% endblock %}

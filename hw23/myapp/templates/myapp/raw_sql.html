@@ -1,0 +1,75 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}Raw SQL Queries{% endblock %}
+
+{% block content %}
+<h1>Execution of Raw SQL Queries</h1>
+<p>Direct low-level SQL operations executed safely using parameterization with cursor.execute.</p>
+
+<div>
+    <strong>SQL Injection Protection Active:</strong>
+    User inputs are passed separately as parameter lists to bind values securely.
+</div>
+
+<hr>
+
+<h3>Query Configuration</h3>
+<form method="get" action="">
+    <div>
+        <label for="min_reviews">Minimum Reviews Count (X):</label><br>
+        <input type="number" id="min_reviews" name="min_reviews" value="{{ min_reviews }}" required min="1" max="100">
+    </div>
+    <br>
+    <div>
+        <label for="min_rating">Minimum Rating Score (Y):</label><br>
+        <input type="number" step="0.1" id="min_rating" name="min_rating" value="{{ min_rating }}" required min="1" max="5">
+    </div>
+    <br>
+    <button type="submit">Apply Query Filters</button>
+</form>
+
+<hr>
+
+<h3>1. Authors with Books (>= X Reviews)</h3>
+<pre>
+SELECT a.id, a.name, b.title, COUNT(r.id) FROM myapp_author a
+JOIN myapp_book b ON b.author_id = a.id
+JOIN myapp_review r ON r.book_id = b.id
+GROUP BY b.id HAVING COUNT(r.id) >= {{ min_reviews }}
+</pre>
+
+<h3>2. Total Books Rating >= Y</h3>
+<pre>
+SELECT COUNT(*) FROM myapp_book
+WHERE rating >= {{ min_rating }}
+</pre>
+<p>Total books found matching score criteria: <strong>{{ total_books_filtered }}</strong></p>
+
+<hr>
+
+<h3>Query Results (Authors with books having >= {{ min_reviews }} reviews)</h3>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Author Name</th>
+            <th>Book Title</th>
+            <th>Reviews Count</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for author in authors %}
+        <tr>
+            <td>{{ author.id }}</td>
+            <td>{{ author.name }}</td>
+            <td>{{ author.book_title }}</td>
+            <td>{{ author.review_count }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4">No authors matched. Try reducing the reviews filter threshold.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

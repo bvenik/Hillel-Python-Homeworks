@@ -1,0 +1,28 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}Celery Task{% endblock %}
+
+{% block content %}
+<h1>Asynchronous Import via Celery</h1>
+<p>Submit books data in CSV format to trigger a background import task with Redis broker.</p>
+
+<h3>Sample CSV Format</h3>
+<pre>{{ sample_csv }}</pre>
+
+<hr>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div>
+        <label for="csv_file">Upload CSV File:</label><br>
+        <input type="file" id="csv_file" name="csv_file" accept=".csv" required>
+    </div>
+    <br>
+    <div>
+        <label for="email">Notification Recipient Email:</label><br>
+        <input type="email" id="email" name="email" required placeholder="developer@example.com" value="test@example.com">
+    </div>
+    <br>
+    <button type="submit">Start Background Import</button>
+</form>
+{% endblock %}

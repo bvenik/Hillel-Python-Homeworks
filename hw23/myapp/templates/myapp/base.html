@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Django Core{% endblock %}</title>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'home' %}">Home</a> |
+        <a href="{% url 'books_list' %}">Books List (Cache)</a> |
+        <a href="{% url 'orm_performance' %}">ORM Performance</a> |
+        <a href="{% url 'orm_aggregations' %}">ORM Aggregations</a> |
+        <a href="{% url 'raw_sql' %}">Raw SQL</a> |
+        <a href="{% url 'celery_task' %}">Celery Import</a> |
+        <a href="{% url 'nosql_compare' %}">NoSQL Benchmark</a>
+        
+        {% if request.COOKIES.username %}
+            [User: {{ request.COOKIES.username }} | <a href="{% url 'logout' %}">Log Out</a>]
+        {% endif %}
+    </nav>
+    <hr>
+
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        <hr>
+    {% endif %}
+
+    {% block content %}{% endblock %}
+</body>
+</html>

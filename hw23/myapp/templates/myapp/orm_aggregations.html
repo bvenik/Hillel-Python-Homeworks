@@ -1,0 +1,66 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}ORM Aggregations{% endblock %}
+
+{% block content %}
+<h1>ORM Annotations and Aggregations</h1>
+<p>Analytical database queries demonstrating Avg and Count operations.</p>
+
+<h2>Average Book Rating per Author</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Author</th>
+            <th>Average Book Rating</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for author in authors_avg %}
+        <tr>
+            <td>{{ author.name }}</td>
+            <td>{{ author.avg_rating|default:"0.0"|floatformat:2 }} ★</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="2">No author records found.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<br>
+
+<h2>Books Ordered by Review Count and Score</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Book Title</th>
+            <th>Author</th>
+            <th>Book Rating</th>
+            <th>Reviews Count</th>
+            <th>Average Review Rating</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for book in books %}
+        <tr>
+            <td>{{ book.title }}</td>
+            <td>{{ book.author.name }}</td>
+            <td>{{ book.rating }} / 5.0</td>
+            <td>{{ book.reviews_count }}</td>
+            <td>
+                {% if book.avg_review_rating %}
+                {{ book.avg_review_rating|floatformat:2 }} ★
+                {% else %}
+                No reviews yet
+                {% endif %}
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="5">No book records found.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

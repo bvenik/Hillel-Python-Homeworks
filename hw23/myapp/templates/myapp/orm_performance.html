@@ -1,0 +1,42 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}ORM Performance{% endblock %}
+
+{% block content %}
+<h1>Django ORM Query Optimization</h1>
+<p>Comparison of execution time and query counts between non-optimized query loop (N+1 problem) and optimized prefetching.</p>
+
+<h3>Benchmark Results</h3>
+<ul>
+    <li><strong>Without Optimization (N+1):</strong> {{ time_non_opt }} seconds (Queries: {{ queries_non_opt }})</li>
+    <li><strong>With Optimization (select_related / prefetch_related):</strong> {{ time_opt }} seconds (Queries: {{ queries_opt }})</li>
+    <li><strong>Saved Queries:</strong> {{ queries_saved }}</li>
+    <li><strong>Speedup Factor:</strong> {{ speedup }}x</li>
+</ul>
+
+<hr>
+
+<h3>Sample Books (First 10 records)</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Book Title</th>
+            <th>Author</th>
+            <th>Reviews Count</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for book in books %}
+        <tr>
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.reviews_count }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="3">No book records. Please run populate_db command.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
